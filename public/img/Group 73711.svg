@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102.978" height="55.971" viewBox="0 0 102.978 55.971">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1801" data-name="Rectangle 1801" width="102.978" height="55.971" fill="none" stroke="#373737" stroke-width="2"/>
+    </clipPath>
+  </defs>
+  <g id="Group_73711" data-name="Group 73711" transform="translate(0 0)">
+    <g id="Group_73710" data-name="Group 73710" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_1422" data-name="Path 1422" d="M1.281,25.26,1.015,36.714l5.028,2.264s.6.033.8-1.8-.1-3.13.466-2.864S18,38.611,18,38.611a1.153,1.153,0,0,1,.9,1.166c-.033.965,0,4.162,0,4.162s-.166.6,1,1.065,4,1.5,4,1.5.732.6.932-1.432.333-2.7.333-2.7.066-.766,1.7,0,11.187,4.861,11.187,4.861.733.034.766,1.432.133,3.928.133,3.928-.1.866,1.065,1.332,5.56,2.031,5.56,2.031l6.526-2.6s.466-.266.5-1.6-.033-3.263-.033-3.263-.1-.9,1.565-1.532S71.5,39.644,71.5,39.644s.6-.266.6.766-.033,4.461-.033,4.461l7.891-3.4s.466-.133.466-1.6.033-3.462.033-3.462-.033-.833,1.8-1.465,12.652-5.294,12.652-5.294.9-.466.9.5.1,4.894.1,4.894l6.393-3.1s.666-.3.666-1.665-.267-9.955-.267-9.955L57.883,1.088Z" transform="translate(-0.497 -0.533)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_96" data-name="Line 96" y1="2.098" x2="7.025" transform="translate(23.725 43.905)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_97" data-name="Line 97" x1="6.759" y1="2.647" transform="translate(64.678 41.841)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_98" data-name="Line 98" x1="6.726" y1="3.046" transform="translate(88.55 31.637)" fill="none" stroke="#373737" stroke-width="2"/>
+      <path id="Path_1423" data-name="Path 1423" d="M144.22,38.132,87.885,62.77l.2,11.32" transform="translate(-43.017 -18.665)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_99" data-name="Line 99" x2="44.083" y2="19.378" transform="translate(0.785 24.728)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_100" data-name="Line 100" x1="56.734" y2="24.571" transform="translate(35.278 15.405)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_101" data-name="Line 101" x1="56.069" y2="24.439" transform="translate(27.021 11.809)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_102" data-name="Line 102" x1="56.335" y2="24.305" transform="translate(18.298 8.014)" fill="none" stroke="#373737" stroke-width="2"/>
+      <line id="Line_103" data-name="Line 103" x1="56.069" y2="24.172" transform="translate(9.308 4.085)" fill="none" stroke="#373737" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
