@@ -12,10 +12,7 @@ justify-content: space-evenly;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: .4s;
-  
-
-  // & img
+  transition: all .2s ease-in-out;
   
   .shield {
     width: 35px;
@@ -33,11 +30,11 @@ justify-content: space-evenly;
   }
 
   &:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 
-  &:hover .wallet {
-    background-color: yellow;
+  &:hover .wallet, &:hover .shield {
+    background-color: #F7B01C;
     
   }
   }

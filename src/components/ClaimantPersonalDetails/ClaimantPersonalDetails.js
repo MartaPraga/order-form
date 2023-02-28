@@ -33,8 +33,8 @@ const ClaimantPersonalDetails = () => {
           <input className='verylong' type='text' id='city' name='city' placeholder='Miejcowość'></input>
           </div>
           <div className='ClaimantPersonalDetails__form__data--line'>
-          <input className='long' type='text' id='phoneNumber' name='phoneNumber' placeholder='Teleton'></input>
-          <input className='long' type='text' id='email' name='email' placeholder='E-mail'></input>
+          <input className='long' type='tel' id='phoneNumber' name='phoneNumber' placeholder='Teleton'></input>
+          <input className='long' type='email' id='email' name='email' placeholder='E-mail'></input>
           </div>
         </form>
       </div>

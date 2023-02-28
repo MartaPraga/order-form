@@ -1,19 +1,35 @@
 .header {
   background-color: #000;
-  width: 100%;
+  width: 1920px;
   height: 370px;
-  padding: 0 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   &__text {
     color: #fff;
     text-align: left;
     letter-spacing: 0.28px;
-    padding: 35px 112px 59px 373px
+    padding: 50px 72px 0px 272px;
+
+    &--logo {
+      padding-bottom: 31px;
+    }
+
+    &--title {
+      font-size: 32px;
+      line-height: 45px;
+      font-weight: bold;
+    }
+
+    &--description{
+      font-size: 24px;
+      line-height: 35px;
+      font-weight: 400;
+    }
   }
 
   &__image {
     max-width: 60%;
+    padding-right: 200px;
   }
 }

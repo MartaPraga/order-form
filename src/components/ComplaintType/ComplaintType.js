@@ -15,13 +15,11 @@ const ComplaintType = () => {
       </div>
       <div className="complaintType__selection">
         <div className="complaintType__selection--option">
-          {/* <img src="/img/shield_icon.svg" alt="shield icon" /> */}
           <div className='shield'></div>
           <span>gwarancyjna</span>
         </div>
         <div className="complaintType__selection--option">
           <div className="wallet"></div>
-          {/* <img src="/img/wallet_icon.svg" alt="wallet icon" /> */}
           <span>pogwarancyjna</span>
         </div>
       </div>

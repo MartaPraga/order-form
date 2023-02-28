@@ -1,0 +1,45 @@
+.PackageDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+
+&__option {
+  width: 338px;
+  height: 73px;
+  box-shadow: #00000029 0 2px 6px;
+  margin: 63px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &--text {
+    width: 125px;
+    margin-left: 36px;
+  }
+
+
+}
+}
+
+.packageSize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__option {
+    background-color: #F3F3F3;
+    width: 138px;
+    height: 172px;
+    box-shadow: #00000029 0 3px 6px;
+    padding: 63px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
