@@ -1,0 +1,42 @@
+.SelectionDataAndTime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  &__time {
+    position: relative;
+
+    &--img {
+      position: absolute;
+      top: 7px;
+      left: 8px;
+    }
+
+    &__select {
+      width: 338px;
+      height: 37px;
+      appearance: none;
+      padding-left: 40px;
+      margin-top: 2px;
+      color: #989898;
+      border: 0;
+      border-bottom: 1px solid #373737;
+      
+      &:focus {
+        outline: none;
+
+      }
+
+      
+    }
+  }
+}
+
+input[type='date'] {
+  width: 338px;
+  padding-bottom: 2px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #989898;
+}

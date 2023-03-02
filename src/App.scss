@@ -4,13 +4,15 @@
   box-sizing: border-box;
 }
 
+
 .main {
   width: 1920px;
   display: flex;
   flex: row;
   justify-content: space-between;
   padding: 0 439px 0 278px;
-   
+  margin: 0 auto;
+
 }
 
 .container {

@@ -35,9 +35,91 @@ justify-content: space-evenly;
 
   &:hover .wallet, &:hover .shield {
     background-color: #F7B01C;
+  }
+
+  .clicked {
+    background-color: #F7B01C;
     
   }
   }
-  
-  
+  .clickedBorder {
+    border: 1px solid #F7B01C;
+  }
+
 }
+
+.complaintType__checkbox {
+display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  align-items: flex-start;
+  gap: 13px;
+  padding-top: 59px;
+
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    cursor: pointer;
+  }
+
+  .control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.control_indicator {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #ffffff;
+    border: 2px solid #91959c;
+    border-radius: 2px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #ffffff;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #ffffff;
+    border: 2px solid #F7B01C;
+}
+
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 6px;
+    top: -1px;
+    width: 5px;
+    height: 11px;
+    border: solid #F7B01C;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+  

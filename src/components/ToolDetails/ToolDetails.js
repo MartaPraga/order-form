@@ -5,7 +5,7 @@ const ToolDetails = () => {
     <div className="container">
       <div className="title">
         <img src="/img/drill_icon.svg" alt="drill icon" />
-        <h2>Narzędzie</h2>
+        <h2 id='ToolDetails'>Narzędzie</h2>
       </div>
       <div className="title--description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -40,10 +40,9 @@ const ToolDetails = () => {
           <div className="popup">gdzie znaleźć numer?</div>
         </div>
         <div className="description">
-          <label 
-          className='description__title'
-          for="description"
-          >Opis usterki</label>
+          <label className="description__title" for="description">
+            Opis usterki
+          </label>
           <textarea
             className="description__data"
             type="text"
@@ -52,6 +51,7 @@ const ToolDetails = () => {
           ></textarea>
         </div>
       </div>
+      
     </div>
   );
 };

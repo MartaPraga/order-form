@@ -1,7 +1,16 @@
+import './Confirmation.scss';
+
 const Confirmation = () => {
+
+
+
   return (
-    <div className="container">
-      <h2>Confirmation</h2>
+    <div className="container" >
+      <div className='confirmation'>
+      <button className="confirmation__button" type="submit" id='Confirmation'>
+        Zgłoś naprawę
+        </button>
+        </div>
     </div>
   );
 };

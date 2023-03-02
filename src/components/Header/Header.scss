@@ -1,15 +1,20 @@
 .header {
-  background-color: #000;
   width: 1920px;
   height: 370px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+
 
   &__text {
     color: #fff;
     text-align: left;
     letter-spacing: 0.28px;
-    padding: 50px 72px 0px 272px;
+    // padding: 50px 72px 0px 272px;
+    position: absolute;
+    left: 272px;
+    top: 50px;
 
     &--logo {
       padding-bottom: 31px;
@@ -28,8 +33,4 @@
     }
   }
 
-  &__image {
-    max-width: 60%;
-    padding-right: 200px;
-  }
 }
