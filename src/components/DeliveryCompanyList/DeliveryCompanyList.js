@@ -17,11 +17,11 @@ const handleClick = () => {
       <img src="img/logo_DPD pickup.png" alt="logo DPD" />
       </div>
       <div className='DeliveryCompanyList__options__option'>
-      <img src="img/logo_DHL_paczkomat.png" alt="logo DHL" />
+      <img src="img/logo_DHLKurier.png" alt="logo DHL" />
       </div>
       </div>
       
-      <div className='ChoosinsDateAndTime'>
+      <div className='ChoosingDateAndTime'>
       {showDateAndTimePicker && <SelectionDataAndTime />}
         </div>
 
