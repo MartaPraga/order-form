@@ -1,6 +1,6 @@
-import './SelectionDataAndTime.scss';
+import './DeliveryDate.scss';
 
-const SelectionDataAndTime = () => {
+export const DeliveryDate = () => {
   return (
     <div className="SelectionDataAndTime">
       <div className="SelectionDataAndTime__date">
@@ -23,5 +23,3 @@ const SelectionDataAndTime = () => {
     </div>
   );
 };
-
-export default SelectionDataAndTime;

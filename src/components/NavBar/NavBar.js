@@ -7,7 +7,7 @@ const NavBar = () => {
       <ul className="NavBar__list">
         <li className="NavBar__list__element">
           <span className="NavBar__list__element--number">1</span>
-          <Link to='ClaimantPersonalDetails' spy={true} smooth={true} offset={-100} duration={1000}>zgłaszający</Link>
+          <Link to='UserDetails' spy={true} smooth={true} offset={-100} duration={1000}>zgłaszający</Link>
         </li>
         <li className="NavBar__list__element">
           <span className="NavBar__list__element--number">2</span>

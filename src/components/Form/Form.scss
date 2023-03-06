@@ -1,0 +1,18 @@
+.confirmation {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  
+    &__button {
+      width: 200px;
+      height: 54px;
+      background-color: gold;
+      color: #373737;
+      margin: 50px auto 250px;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+    }
+  }

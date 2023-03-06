@@ -1,4 +1,32 @@
-.ClaimantPersonalDetails__form {
+.UserDetails__form {
+  width: 100%;
+  height: 363px;
+
+&--title {
+  display: inline;
+ 
+}
+
+&__data {
+  padding-top: 30px;
+
+  &--line {
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    min-width: 0;
+  }
+
+}
+}
+
+.UserDetails__form {
   width: 100%;
   height: 363px;
   // padding-bottom: 100px;

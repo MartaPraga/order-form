@@ -6,9 +6,11 @@
   color: #989898;
 }
 .description {
+  padding-top: 20px;
 
   &__title {
     color: #989898;
+    
   }
 
   &__data {
@@ -16,6 +18,7 @@
     height: 88px;
     border: 1px solid black;
     resize: none;
+    margin-top: 5px;
   }
 
   textarea:focus {
