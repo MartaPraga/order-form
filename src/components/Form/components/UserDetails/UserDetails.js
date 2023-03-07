@@ -26,31 +26,33 @@ export const UserDetails = ({ register, unregister, errors }) => {
     >
       <div>
         <div className="UserDetails__form--title">
-          <button onClick={handlePersonalData}>Osoba prywatna / </button>
-          <button onClick={handleCompanyData}>Firma</button>
+          <div onClick={handlePersonalData}>Osoba prywatna / </div>
+          <div onClick={handleCompanyData}>Firma</div>
         </div>
         <div className="UserDetails__form__data--line">
           {personalData ? (
             <>
               {/* TODO: create separate Input component and reuse it */}
               <label className="label">
-                Imię
+                
                 <input
                   {...register('firstName', { required: true })}
                   className="long"
                   type="text"
                   placeholder="Imię"
+                  required
                 />
                 {errors.firstName && <p className="error">pole obowiązkowe</p>}
               </label>
 
               <label className="label">
-                Nazwisko
+                
                 <input
                   {...register('lastName', { required: true })}
                   className="long"
                   type="text"
                   placeholder="Nazwisko"
+                  required
                 />
                 {errors.lastName && <p className="error">pole obowiązkowe</p>}
               </label>
@@ -64,6 +66,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   className="long"
                   type="text"
                   placeholder="Nazwa firmy"
+                  required
                 />
                 {errors.companyName && (
                   <p className="error">pole obowiązkowe</p>
@@ -71,12 +74,13 @@ export const UserDetails = ({ register, unregister, errors }) => {
               </label>
 
               <label className="label">
-                NIP
+                
                 <input
                   {...register('companyTaxNumber', { required: true })}
                   className="long"
                   type="text"
                   placeholder="NIP"
+                  required
                 />
                 {errors.companyTaxNumber && (
                   <p className="error">pole obowiązkowe</p>
@@ -87,7 +91,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
         </div>
         <div className="UserDetails__form__data--line">
           <label className="label">
-            Adres
+            
             <input
               {...register('address', { required: true })}
               className="long"
@@ -99,7 +103,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
             {errors.address && <p className="error">pole obowiązkowe</p>}
           </label>
           <label className="label">
-            Numer domu
             <input
               {...register('houseNumber', { required: true })}
               className="short"
@@ -109,7 +112,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
             {errors.houseNumber && <p className="error">pole obowiązkowe</p>}
           </label>
           <label className="label">
-            Numer lokalu
             <input
               {...register('flatNumber', { required: true })}
               className="short"
@@ -121,7 +123,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
         </div>
         <div className="UserDetails__form__data--line">
           <label className="label">
-            Kod pocztowy
             <input
               {...register('postalCode', { required: true })}
               className="short"
@@ -131,7 +132,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
             {errors.postalCode && <p className="error">pole obowiązkowe</p>}
           </label>
           <label className="label">
-            Miejscowość
             <input
               {...register('city', { required: true })}
               className="verylong"
@@ -143,7 +143,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
         </div>
         <div className="UserDetails__form__data--line">
           <label className="label">
-            Numer telefonu
             <input
               {...register('phoneNumber', { required: true })}
               className="long"
@@ -153,7 +152,6 @@ export const UserDetails = ({ register, unregister, errors }) => {
             {errors.phoneNumber && <p className="error">pole obowiązkowe</p>}
           </label>
           <label className="label">
-            E-mail
             <input
               {...register('mail', { required: true })}
               className="long"

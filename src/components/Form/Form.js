@@ -25,9 +25,9 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <UserDetails register={register} errors={errors} unregister={unregister} />
-      {/* <ComplaintType /> */}
-      {/* <ToolDetails /> */}
-      {/* <PackageDetails /> */}
+      <ComplaintType />
+      <ToolDetails />
+      <PackageDetails />
       <div className="confirmation">
         {/* TODO style all buttons actions: focus, hover, active */}
         <button
@@ -37,7 +37,7 @@ export const Form = () => {
         >
           Zgłoś naprawę
         </button>
-        <DatePicker />
+        {/* <DatePicker /> */}
       </div>
     </form>
   );

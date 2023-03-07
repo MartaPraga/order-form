@@ -1,7 +1,24 @@
 import './ComplaintType.scss';
+import { useState } from 'react';
 import { Section } from '../Section/Section';
 
 export const ComplaintType = () => {
+
+const [clickedGuarantee, setClickedGuarantee] = useState(false)
+const [clickedPostWrranty, setClickedPostWrranty] = useState(false)
+
+const handelClickGuarantee = () => {
+  setClickedGuarantee(true)
+  setClickedPostWrranty(false)
+
+}
+
+const handelClickPostWrranty = () => {
+  setClickedGuarantee(false)
+  setClickedPostWrranty(true)
+
+}
+
   return (
     <Section
       title={
@@ -14,12 +31,13 @@ export const ComplaintType = () => {
         facilisis in nisl quis rutrum. Ut ligula diam, ullamcorper a aliquet ac,
         mattis a quam. Integer vel egestas urna, quis blandit neque."
     >
-      <div className="complaintType__selection">
-        <div className="complaintType__selection--option" id="clicked">
+      <div className="complaintType__selection" >
+        <div onClick={handelClickGuarantee} className={clickedGuarantee ? "clicked" : "complaintType__selection--option" }>
+
           <div className="shield"></div>
           <span>gwarancyjna</span>
         </div>
-        <div className="complaintType__selection--option" id="clicked">
+        <div onClick={handelClickPostWrranty}  className={clickedPostWrranty ? "clicked" : "complaintType__selection--option" }>
           <div className="wallet"></div>
           <span>pogwarancyjna</span>
         </div>
