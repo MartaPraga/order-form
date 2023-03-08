@@ -5,17 +5,17 @@ import { Section } from '../Section/Section';
 export const ComplaintType = () => {
 
 const [clickedGuarantee, setClickedGuarantee] = useState(false)
-const [clickedPostWrranty, setClickedPostWrranty] = useState(false)
+const [clickedPostWarranty, setClickedPostWarranty] = useState(false)
 
 const handelClickGuarantee = () => {
   setClickedGuarantee(true)
-  setClickedPostWrranty(false)
+  setClickedPostWarranty(false)
 
 }
 
-const handelClickPostWrranty = () => {
+const handelClickPostWarranty = () => {
   setClickedGuarantee(false)
-  setClickedPostWrranty(true)
+  setClickedPostWarranty(true)
 
 }
 
@@ -37,12 +37,12 @@ const handelClickPostWrranty = () => {
           <div className="shield"></div>
           <span>gwarancyjna</span>
         </div>
-        <div onClick={handelClickPostWrranty}  className={clickedPostWrranty ? "clicked" : "complaintType__selection--option" }>
+        <div onClick={handelClickPostWarranty}  className={clickedPostWarranty ? "clicked" : "complaintType__selection--option" }>
           <div className="wallet"></div>
           <span>pogwarancyjna</span>
         </div>
       </div>
-      <div className="complaintType__checkbox">
+      {clickedGuarantee || clickedPostWarranty ? <div className="complaintType__checkbox">
         <label for="checked" className="control control-checkbox">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
           facilisis in nisl quis rutrum. Ut ligula diam, ullamcorper a aliquet
@@ -50,7 +50,8 @@ const handelClickPostWrranty = () => {
           <input type="checkbox" id="checked"></input>
           <div className="control_indicator"></div>
         </label>
-      </div>
+      </div> : null }
+      
     </Section>
   );
 };

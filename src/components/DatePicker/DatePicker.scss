@@ -1,13 +1,15 @@
 .PurchaseDate {
 position: relative;
 
-&__data--icon {
+&--icon {
 position: absolute;
-top: 50px;
+top: 5px;
+left: 5px;
+z-index: 100;
 }
 
   &__DatePicker {
-    padding-left: 80px;
+    padding-left: 50px;
   }
 
   

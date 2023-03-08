@@ -1,7 +1,29 @@
 import { Section } from '../Section';
+import { DatePicker } from '../../../DatePicker';
 import './ToolDetails.scss';
+import { useState, useRef } from 'react';
+import React from 'react';
 
 export const ToolDetails = () => {
+
+  const receipt = useRef();
+  const certificate = useRef();
+
+
+  const [receiptValue, setReceiptValue] = useState('nie wybrano pliku');
+  const [certificateValue, setCertificateValue] = useState('nie wybrano pliku');
+
+
+  const handleReceiptChange = () => {
+    setReceiptValue(receipt.current.files[0].name);
+  };
+
+  const handleChange = () => {
+    setCertificateValue(certificate.current.files[0].name);
+  };
+
+
+
   return (
     <Section
       title={
@@ -44,16 +66,50 @@ export const ToolDetails = () => {
           <div className="popup">gdzie znaleźć numer?</div>
         </div>
 
+        <div className="guaranteeData">
+          <DatePicker />
+          <div className="guaranteeData__proof">
+            <div className="guaranteeData__proof--file">
+              <label for='receipt'>
+                Dowód zakupu
+                <img src="/img/plus_icon.svg" alt="plus icon"></img>
+                <span>{receiptValue}</span>
+              </label>
+              <input
+                accept=".jpg, .jpeg, .png .pdf"
+                type="file"
+                ref={receipt}
+                id="receipt"
+                onChange={handleReceiptChange}
+              ></input>
+            </div>
+            <div className="guaranteeData__proof--file">
+              <label for="certificate">
+                3-letni certyfikat
+                <img src="/img/plus_icon.svg" alt="plus icon"></img>
+              </label>
+              <span>{certificateValue}</span>
+              <input
+                accept=".jpg, .jpeg, .png .pdf"
+                type="file"
+                ref={certificate}
+                id="certificate"
+                onChange={handleChange}
+              ></input>
+            </div>
+          </div>
+        </div>
+
         <div className="description">
           <label className="description__title" for="description">
             Opis usterki
+            <textarea
+              className="description__data"
+              type="text"
+              id="description"
+              name="description"
+            ></textarea>
           </label>
-          <textarea
-            className="description__data"
-            type="text"
-            id="description"
-            name="description"
-          ></textarea>
         </div>
       </div>
     </Section>

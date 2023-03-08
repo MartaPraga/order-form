@@ -1,5 +1,5 @@
 .popup {
-  color: #F7B01C;
+  color: #f7b01c;
 }
 
 ::placeholder {
@@ -10,7 +10,6 @@
 
   &__title {
     color: #989898;
-    
   }
 
   &__data {
@@ -26,3 +25,32 @@
   }
 }
 
+.guaranteeData {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+
+  &__proof {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    gap: 20px;
+
+    input[type='file'] {
+      position: fixed;
+    right: 100%;
+    bottom: 100%;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+  }
+}
