@@ -3,21 +3,18 @@ import { useState } from 'react';
 import { Section } from '../Section/Section';
 
 export const ComplaintType = () => {
+  const [clickedGuarantee, setClickedGuarantee] = useState(false);
+  const [clickedPostWarranty, setClickedPostWarranty] = useState(false);
 
-const [clickedGuarantee, setClickedGuarantee] = useState(false)
-const [clickedPostWarranty, setClickedPostWarranty] = useState(false)
+  const handelClickGuarantee = () => {
+    setClickedGuarantee(true);
+    setClickedPostWarranty(false);
+  };
 
-const handelClickGuarantee = () => {
-  setClickedGuarantee(true)
-  setClickedPostWarranty(false)
-
-}
-
-const handelClickPostWarranty = () => {
-  setClickedGuarantee(false)
-  setClickedPostWarranty(true)
-
-}
+  const handelClickPostWarranty = () => {
+    setClickedGuarantee(false);
+    setClickedPostWarranty(true);
+  };
 
   return (
     <Section
@@ -31,27 +28,37 @@ const handelClickPostWarranty = () => {
         facilisis in nisl quis rutrum. Ut ligula diam, ullamcorper a aliquet ac,
         mattis a quam. Integer vel egestas urna, quis blandit neque."
     >
-      <div className="complaintType__selection" >
-        <div onClick={handelClickGuarantee} className={clickedGuarantee ? "clicked" : "complaintType__selection--option" }>
-
+      <div className="complaintType__selection">
+        <div
+          onClick={handelClickGuarantee}
+          className={
+            clickedGuarantee ? 'clicked' : 'complaintType__selection--option'
+          }
+        >
           <div className="shield"></div>
           <span>gwarancyjna</span>
         </div>
-        <div onClick={handelClickPostWarranty}  className={clickedPostWarranty ? "clicked" : "complaintType__selection--option" }>
+        <div
+          onClick={handelClickPostWarranty}
+          className={
+            clickedPostWarranty ? 'clicked' : 'complaintType__selection--option'
+          }
+        >
           <div className="wallet"></div>
           <span>pogwarancyjna</span>
         </div>
       </div>
-      {clickedGuarantee || clickedPostWarranty ? <div className="complaintType__checkbox">
-        <label for="checked" className="control control-checkbox">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          facilisis in nisl quis rutrum. Ut ligula diam, ullamcorper a aliquet
-          ac,
-          <input type="checkbox" id="checked"></input>
-          <div className="control_indicator"></div>
-        </label>
-      </div> : null }
-      
+      {clickedGuarantee || clickedPostWarranty ? (
+        <div className="complaintType__checkbox">
+          <label for="checked" className="control control-checkbox">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            facilisis in nisl quis rutrum. Ut ligula diam, ullamcorper a aliquet
+            ac,
+            <input type="checkbox" id="checked"></input>
+            <div className="control_indicator"></div>
+          </label>
+        </div>
+      ) : null}
     </Section>
   );
 };

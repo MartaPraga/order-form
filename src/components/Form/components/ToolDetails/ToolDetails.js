@@ -4,7 +4,7 @@ import './ToolDetails.scss';
 import { useState, useRef } from 'react';
 import React from 'react';
 
-export const ToolDetails = () => {
+export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
 
   const receipt = useRef();
   const certificate = useRef();
@@ -73,8 +73,8 @@ export const ToolDetails = () => {
               <label for='receipt'>
                 Dowód zakupu
                 <img src="/img/plus_icon.svg" alt="plus icon"></img>
-                <span>{receiptValue}</span>
               </label>
+              <span>{receiptValue}</span>
               <input
                 accept=".jpg, .jpeg, .png .pdf"
                 type="file"
@@ -110,6 +110,13 @@ export const ToolDetails = () => {
               name="description"
             ></textarea>
           </label>
+        </div>
+        <div className='maxPrice'>
+          <div className='maxPrice__description'>
+          <img src="img/plus_icon.svg" alt="question mar icon"></img>
+          <p>Maksymalna kwota, do której wyrażasz zgodę na naprawę <span>(opcjonalnie)</span></p>
+          </div>
+          <input className='short' type='number' placeholder='Kwota'></input>
         </div>
       </div>
     </Section>

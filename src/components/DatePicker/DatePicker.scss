@@ -1,16 +1,24 @@
 .PurchaseDate {
 position: relative;
+cursor: pointer;
 
 &--icon {
 position: absolute;
 top: 5px;
 left: 5px;
 z-index: 100;
+
+&:hover {
+color: #373737}
 }
+
+
 
   &__DatePicker {
     padding-left: 50px;
   }
+
+  
 
   
 }
