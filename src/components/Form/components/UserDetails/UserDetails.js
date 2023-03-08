@@ -41,6 +41,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   type="text"
                   placeholder="Imię"
                   required
+                  maxLength={ 15 }
                 />
                 {errors.firstName && <p className="error">pole obowiązkowe</p>}
               </label>

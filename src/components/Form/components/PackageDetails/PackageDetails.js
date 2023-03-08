@@ -7,6 +7,7 @@ export const PackageDetails = () => {
   const [isParcelLockerList, setParcelLockerList] = useState(false);
   const [isDeliveryCompanyList, setDeliveryCompanyList] = useState(false);
   const [isDatePicker, setDatePicker] = useState(false);
+  const [isClicked, setClicked] = useState(null)
 
   const handleDeliveryCompanyList = () => {
     setDeliveryCompanyList(true);
@@ -22,6 +23,16 @@ export const PackageDetails = () => {
     setDatePicker(true);
   };
 
+  const handleSelection = () => {
+    if (isClicked) {
+      console.log( isClicked)
+return;
+    } else {
+      setClicked()
+      console.log(isClicked)
+    }
+  }
+
   return (
     <Section
       title={
@@ -36,14 +47,16 @@ export const PackageDetails = () => {
       <p>Wybierz sposób nadania paczki:</p>
       <div className="PackageDetails">
         <div
-          className="PackageDetails__option"
+          className={isDeliveryCompanyList ? "clickedDeliveryOption" : "PackageDetails__option" &&
+          isParcelLockerList ? "block" : "clickedDeliveryOption"}
           onClick={handleDeliveryCompanyList}
         >
           <img src="/img/car_icon.svg" alt="car icon" />
           <div className="PackageDetails__option--text">wysyłam kurierem</div>
         </div>
         <div
-          className="PackageDetails__option"
+          className={isParcelLockerList ? "clickedDeliveryOption" : "PackageDetails__option" &&
+          isDeliveryCompanyList ? "block" : "clickedDeliveryOption"}
           onClick={handleParcelLockerList}
         >
           <img src="/img/pointer_icon.svg" alt="pointer icon" />
@@ -76,13 +89,13 @@ export const PackageDetails = () => {
         {isParcelLockerList && (
           <div className="CompanyList">
             <div className="CompanyList__options">
-              <div className="CompanyList__option">
+              <div className="CompanyList__options__option">
                 <img src="img/logo_InPost-paczkomat.png" alt="logo Inpost" />
               </div>
-              <div className="CompanyList__option">
+              <div className="CompanyList__options__option">
                 <img src="img/logo_DPD pickup.png" alt="logo DPD" />
               </div>
-              <div className="CompanyList__option">
+              <div className="CompanyList__options__option">
                 <img src="img/logo_DHL_paczkomat.png" alt="logo DHL" />
               </div>
             </div>
@@ -92,7 +105,7 @@ export const PackageDetails = () => {
 
       <p>Kategoria przesyłki:</p>
       <div className="packageSize">
-        <div className="packageSize__option">
+        <div className="packageSize__option" onClick={handleSelection}>
           <div className="packageSize__option--image">
             <img src="img/small_box_icon.svg" alt="small box icon" />
           </div>
@@ -101,7 +114,7 @@ export const PackageDetails = () => {
             <div className="packageSize__option--weitgh">do 5 kg</div>
           </div>
         </div>
-        <div className="packageSize__option">
+        <div className="packageSize__option" onClick={handleSelection}>
           <div className="packageSize__option--image">
             <img src="img/medium_box_icon.svg" alt="small box icon" />
           </div>

@@ -5,14 +5,11 @@ import { useState, useRef } from 'react';
 import React from 'react';
 
 export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
-
   const receipt = useRef();
   const certificate = useRef();
 
-
   const [receiptValue, setReceiptValue] = useState('nie wybrano pliku');
   const [certificateValue, setCertificateValue] = useState('nie wybrano pliku');
-
 
   const handleReceiptChange = () => {
     setReceiptValue(receipt.current.files[0].name);
@@ -21,8 +18,6 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
   const handleChange = () => {
     setCertificateValue(certificate.current.files[0].name);
   };
-
-
 
   return (
     <Section
@@ -70,7 +65,7 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
           <DatePicker />
           <div className="guaranteeData__proof">
             <div className="guaranteeData__proof--file">
-              <label for='receipt'>
+              <label for="receipt">
                 Dowód zakupu
                 <img src="/img/plus_icon.svg" alt="plus icon"></img>
               </label>
@@ -111,12 +106,19 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
             ></textarea>
           </label>
         </div>
-        <div className='maxPrice'>
-          <div className='maxPrice__description'>
-          <img src="img/plus_icon.svg" alt="question mar icon"></img>
-          <p>Maksymalna kwota, do której wyrażasz zgodę na naprawę <span>(opcjonalnie)</span></p>
+        <div className="maxPrice">
+          <div className="maxPrice__description">
+            <img src="img/plus_icon.svg" alt="question mar icon"></img>
+            <p>
+              Maksymalna kwota, do której wyrażasz zgodę na naprawę{' '}
+              <span>(opcjonalnie)</span>
+            </p>
           </div>
-          <input className='short' type='number' placeholder='Kwota'></input>
+          <input 
+          className="short" 
+          type="number"
+          placeholder="Kwota"
+          min={1}></input>
         </div>
       </div>
     </Section>

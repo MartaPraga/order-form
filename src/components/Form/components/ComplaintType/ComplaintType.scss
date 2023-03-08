@@ -94,14 +94,15 @@ display: flex;
   }
 
   .control {
-    font-family: arial;
     display: block;
+    width: 655px;
     position: relative;
     padding-left: 33px;
     margin-bottom: 0px;
     padding-top: 5px;
     cursor: pointer;
     font-size: 16px;
+    color: #91959c;
 }
     .control input {
         position: absolute;

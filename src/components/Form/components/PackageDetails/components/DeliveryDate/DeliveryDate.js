@@ -1,15 +1,17 @@
+import { DatePicker } from '../../../../../DatePicker';
 import './DeliveryDate.scss';
 
 export const DeliveryDate = () => {
   return (
     <div className="SelectionDataAndTime">
       <div className="SelectionDataAndTime__date">
-        <input
+        {/* <input
           type="date"
           placeholder="Data odbioru"
           id="data"
           name="data"
-        ></input>
+        ></input> */}
+        <DatePicker />
       </div>
       <div className="SelectionDataAndTime__time">
         <img  className="SelectionDataAndTime__time--img" src="/img/clock_icon.svg" alt="clock icon" />
