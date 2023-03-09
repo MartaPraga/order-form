@@ -117,9 +117,14 @@ input[type='radio'] {
       margin-bottom: 80px;
       transform: translateZ(0) scale(1, 1);
 
+
       &:hover {
         transform: scale(1.1);
       }
     }
   }
+}
+
+.massage {
+  padding-bottom: 63px;
 }
