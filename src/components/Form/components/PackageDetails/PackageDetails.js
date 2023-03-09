@@ -141,25 +141,6 @@ export const PackageDetails = () => {
       </div>
 
       <p>Kategoria przesyłki:</p>
-      {/* <div className="Size">
-        {PACKAGE_OPTIONS.map(({ id }) => {
-          const active = currentPackage === id;
-
-          return (
-            <div className="packageSize">
-              {PACKAGE_OPTIONS.map((option) => (
-                <PackageSize
-                  {...option}
-                  setCurrentPackage={setCurrentPackage}
-                  active={active}
-                  handleClick={handleClick}
-                />
-              )
-              )}
-            </div>
-          );
-        })}
-      </div> */}
 
       <div className="packageSize">
         {PACKAGE_OPTIONS.map(({ id, icon, size, range }) => {
@@ -178,7 +159,7 @@ export const PackageDetails = () => {
                 </div>
                 
               </div>
-              <input type="radio" id={id} value="id" name={size} checked={active === true} required />
+              <input type="radio" id={id} value="id" name={size} checked={active === true}  />
 
             </div>
           );

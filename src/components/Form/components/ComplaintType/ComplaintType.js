@@ -1,20 +1,8 @@
 import './ComplaintType.scss';
-import { useState } from 'react';
 import { Section } from '../Section/Section';
 
-export const ComplaintType = () => {
-  const [clickedGuarantee, setClickedGuarantee] = useState(false);
-  const [clickedPostWarranty, setClickedPostWarranty] = useState(false);
+export const ComplaintType = ({clickedGuarantee, clickedPostWarranty, setClickedGuarantee, setClickedPostWarranty, handelClickGuarantee, handelClickPostWarranty}) => {
 
-  const handelClickGuarantee = () => {
-    setClickedGuarantee(true);
-    setClickedPostWarranty(false);
-  };
-
-  const handelClickPostWarranty = () => {
-    setClickedGuarantee(false);
-    setClickedPostWarranty(true);
-  };
 
   return (
     <Section

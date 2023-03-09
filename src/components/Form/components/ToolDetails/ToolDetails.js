@@ -4,7 +4,7 @@ import './ToolDetails.scss';
 import { useState, useRef } from 'react';
 import React from 'react';
 
-export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
+export const ToolDetails = ({clickedGuarantee, clickedPostWarranty}) => {
   const receipt = useRef();
   const certificate = useRef();
 
@@ -60,7 +60,7 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
           ></input>
           <div className="popup">gdzie znaleźć numer?</div>
         </div>
-
+{clickedGuarantee ? (
         <div className="guaranteeData">
           <DatePicker />
           <div className="guaranteeData__proof">
@@ -93,7 +93,7 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
               ></input>
             </div>
           </div>
-        </div>
+        </div> ) : null }
 
         <div className="description">
           <label className="description__title" for="description">
@@ -106,6 +106,7 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
             ></textarea>
           </label>
         </div>
+        {clickedPostWarranty ? (
         <div className="maxPrice">
           <div className="maxPrice__description">
             <img src="img/plus_icon.svg" alt="question mar icon"></img>
@@ -119,7 +120,7 @@ export const ToolDetails = (clickedGuarantee, clickedPostWarranty) => {
           type="number"
           placeholder="Kwota"
           min={1}></input>
-        </div>
+        </div> ) : null }
       </div>
     </Section>
   );
