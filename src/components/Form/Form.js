@@ -1,6 +1,6 @@
 import './Form.scss';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useState } from 'react-hook-form';
 import {
   UserDetails,
   ComplaintType,
@@ -37,11 +37,11 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <UserDetails
+      {/* <UserDetails
         register={register}
         errors={errors}
         unregister={unregister}
-      />
+      /> */}
       <ComplaintType
         // clickedGuarantee={clickedGuarantee}
         // clickedPostWarranty={clickedPostWarranty}

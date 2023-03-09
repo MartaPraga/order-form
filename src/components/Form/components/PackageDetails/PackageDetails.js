@@ -173,14 +173,18 @@ export const PackageDetails = () => {
               >
                 <div className="packageSize__option--image">{icon}</div>
                 <div className="packageSize__option--text">
-                  <div className="packageSize__option--title">{size}</div>
-                  <div>{range}</div>
+                  <label for="id" className="packageSize__option--title">{size}</label>
+                  <div>{range}</div>                  
                 </div>
+                
               </div>
+              <input type="radio" id={id} value="id" name={size} checked={active === true} required />
+
             </div>
           );
         })}
       </div>
+
     </Section>
   );
 };
