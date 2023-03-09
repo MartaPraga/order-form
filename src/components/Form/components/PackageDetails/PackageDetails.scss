@@ -59,12 +59,14 @@
   }
 }
 
+
 .packageSize {
   margin-top: 63px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
 
   &__option {
     background-color: #fff;
@@ -90,6 +92,17 @@
   }
 }
 
+.active {
+  border: 1px solid #F7B01C;
+  background-color: #fff;
+    width: 138px;
+    height: 172px;
+    box-shadow: #00000029 0 3px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 
 .ChoosingCompany {

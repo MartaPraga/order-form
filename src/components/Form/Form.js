@@ -1,6 +1,6 @@
 import './Form.scss';
 import React from 'react';
-import { useForm, useState } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import {
   UserDetails,
   ComplaintType,
