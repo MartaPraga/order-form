@@ -103,8 +103,9 @@ input[type='radio'] {
   &__options {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    gap: 52px;
 
     &__option {
       width: 208px;
@@ -117,7 +118,6 @@ input[type='radio'] {
       margin-bottom: 80px;
       transform: translateZ(0) scale(1, 1);
 
-
       &:hover {
         transform: scale(1.1);
       }
@@ -127,4 +127,34 @@ input[type='radio'] {
 
 .massage {
   padding-bottom: 63px;
+}
+
+button:disabled {
+  background-color: #f3f3f3;
+  color: #373737;
+  transform: none;
+  width: 138px;
+  height: 172px;
+  box-shadow: #00000029 0 3px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  pointer-events: none;
+}
+
+button[disabled]:hover {
+  transform: none;
+}
+
+.activePackage {
+  border: 1px solid #F7B01C;
+  background-color: #fff;
+    width: 138px;
+    height: 172px;
+    box-shadow: #00000029 0 3px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }

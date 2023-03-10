@@ -1,71 +1,102 @@
 import './PackageDetails.scss';
 import React, { useState } from 'react';
-import { DeliveryDate, PackageSize } from './components';
+import { DeliveryDate } from './components';
 import { Section } from '../Section';
+import { useRef, useEffect } from 'react';
 
 export const PackageDetails = () => {
   const [isParcelLockerList, setParcelLockerList] = useState(false);
   const [isDeliveryCompanyList, setDeliveryCompanyList] = useState(false);
   const [isDatePicker, setDatePicker] = useState(false);
-  const [currentPackage, setCurrentPackage] = useState(0);
   const [inPostMassage, setInPostMassage] = useState(false);
   const [DPDpickupMassage, setDPDpickupMassage] = useState(false);
   const [DHLPaczkomtMassage, setDHLPaczkomatMassage] = useState(false);
+  const [smallPackage, setSmallPackage] = useState(false);
+  const [mediumPackage, setMediumPackage] = useState(false);
+  const [bigPackage, setBigPackage] = useState(false);
+  const [HugePackage, setHugePackage] = useState(false);
+  const [PalletPackage, setPalletPackage] = useState(false);
 
-  const PACKAGE_OPTIONS = [
-    {
-      icon: <img src="img/small_box_icon.svg" alt="small box icon" />,
-      size: 'mała',
-      range: 'do 5kg',
-      lockerRange: '64 x 38 x 8 cm',
-      id: 1,
-    },
-    {
-      icon: <img src="img/medium_box_icon.svg" alt="medium box icon" />,
-      size: 'średnia',
-      range: 'do 10kg',
-      lockerRange: '64 x 38 x 19 cm',
-      id: 2,
-    },
-    {
-      icon: <img src="img/big_box_icon.svg" alt="big box icon" />,
-      size: 'duza',
-      range: 'do 20kg',
-      lockerRange: '64 x 38 x 41 cm',
-      id: 3,
-    },
-    {
-      icon: <img src="img/huge_box_icon.svg" alt="huge box icon" />,
-      size: 'wielka',
-      range: 'do 35kg',
-      lockerRange: '-',
-      id: 4,
-    },
-    {
-      icon: <img src="img/pallet_icon.svg" alt="pallet icon" />,
-      size: 'paleta',
-      range: '',
-      id: 5,
-    },
-  ];
+  const isSmall = useRef(false);
+  const isMedium = useRef(false);
+  const isBig = useRef(false);
+  const isHuge = useRef(false);
+  const isPallet = useRef(false);
+
+  const handleSmallPackage = () => {
+    setSmallPackage(true);
+    setMediumPackage(false);
+    setBigPackage(false);
+    setHugePackage(false);
+    setPalletPackage(false);
+  };
+
+  const handleMediumPackage = () => {
+    setSmallPackage(false);
+    setMediumPackage(true);
+    setBigPackage(false);
+    setHugePackage(false);
+    setPalletPackage(false);
+  };
+
+  const handleBigPackage = () => {
+    setSmallPackage(false);
+    setMediumPackage(false);
+    setBigPackage(true);
+    setHugePackage(false);
+    setPalletPackage(false);
+  };
+
+  const handleHugePackage = () => {
+    setSmallPackage(false);
+    setMediumPackage(false);
+    setBigPackage(false);
+    setHugePackage(true);
+    setPalletPackage(false);
+  };
+
+  const handlePalletPackage = () => {
+    setSmallPackage(false);
+    setMediumPackage(false);
+    setBigPackage(false);
+    setHugePackage(false);
+    setPalletPackage(true);
+  };
+
+  useEffect(() => {
+    isSmall.current.disabled = true;
+    isMedium.current.disabled = true;
+    isBig.current.disabled = true;
+    isHuge.current.disabled = true;
+}, [])
+
 
   const handleDeliveryCompanyList = () => {
     setDeliveryCompanyList(true);
     setParcelLockerList(false);
+    isSmall.current.disabled = false;
+    isMedium.current.disabled = false;
+    isBig.current.disabled = false;
+    isHuge.current.disabled = false;
+    isPallet.current.disabled = false;
   };
 
   const handleParcelLockerList = () => {
     setParcelLockerList(true);
     setDeliveryCompanyList(false);
+    setHugePackage(false);
+    setPalletPackage(false);
+    isSmall.current.disabled = false;
+    isMedium.current.disabled = false;
+    isBig.current.disabled = false;
+    isHuge.current.disabled = true;
+    isPallet.current.disabled = true;
   };
 
   const handlePicker = () => {
     setDatePicker(true);
   };
 
-  const handleClick = (id) => {
-    setCurrentPackage(id);
-  };
 
   const handleinPost = () => {
     setInPostMassage(true);
@@ -199,34 +230,79 @@ export const PackageDetails = () => {
       <p>Kategoria przesyłki:</p>
 
       <div className="packageSize">
-
-        {PACKAGE_OPTIONS.map(({ id, icon, size, range }) => {
-          const active = currentPackage === id;
-
-          return (
-            <div className="packageSize">
-              <div
-                className={active ? 'active' : 'packageSize__option'}
-                onClick={() => handleClick(id)}
-              >
-                <div className="packageSize__option--image">{icon}</div>
-                <div className="packageSize__option--text">
-                  <label for="id" className="packageSize__option--title">
-                    {size}
-                  </label>
-                  <div>{range}</div>
-                </div>
-              </div>
-              <input
-                type="radio"
-                id={id}
-                value="id"
-                name={size}
-                checked={active === true}
-              />
-            </div>
-          );
-        })}
+        <button
+          ref={isSmall}
+          className={smallPackage ? 'activePackage' : 'packageSize__option'}
+          onClick={() => handleSmallPackage()}
+          
+          type="button"
+        >
+          <div className="packageSize__option--image">
+            <img src="img/small_box_icon.svg" alt="small box icon" />
+          </div>
+          <div className="packageSize__option--text">
+            <div className="packageSize__option--title">mała</div>
+            <div className="packageSize__option--weitgh">do 5 kg</div>
+          </div>
+        </button>
+        <button
+          ref={isMedium}
+          className={mediumPackage ? 'activePackage' : 'packageSize__option'}
+          onClick={() => handleMediumPackage()}
+          
+          type="button"
+        >
+          <div className="packageSize__option--image">
+            <img src="img/medium_box_icon.svg" alt="small box icon" />
+          </div>
+          <div className="packageSize__option--text">
+            <div className="packageSize__option--title">średnia</div>
+            <div>do 10 kg</div>
+          </div>
+        </button>
+        <button
+          ref={isBig}
+          className={bigPackage ? 'activePackage' : 'packageSize__option'}
+          onClick={() => handleBigPackage()}
+          
+          type="button"
+        >
+          <div className="packageSize__option--image">
+            <img src="img/big_box_icon.svg" alt="small box icon" />
+          </div>
+          <div className="packageSize__option--text">
+            <div className="packageSize__option--title">duza</div>
+            <div>do 20 kg</div>
+          </div>
+        </button>
+        <button
+          ref={isHuge}
+          className={HugePackage ? 'activePackage' : 'packageSize__option'}
+          onClick={() => handleHugePackage()}
+          
+          type="button"
+        >
+          <div className="packageSize__option--image">
+            <img src="img/huge_box_icon.svg" alt="small box icon" />
+          </div>
+          <div className="packageSize__option--text">
+            <div className="packageSize__option--title">wielka</div>
+            <div>do 35 kg</div>
+          </div>
+        </button>
+        <button
+          ref={isPallet}
+          className={PalletPackage ? 'activePackage' : 'packageSize__option'}
+          onClick={() => handlePalletPackage()}
+          type="button"
+        >
+          <div className="packageSize__option--image">
+            <img src="img/pallet_icon.svg" alt="small box icon" />
+          </div>
+          <div className="packageSize__option--text">
+            <div className="packageSize__option--title">paleta</div>
+          </div>
+        </button>
       </div>
     </Section>
   );
