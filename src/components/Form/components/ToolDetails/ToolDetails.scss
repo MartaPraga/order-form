@@ -47,8 +47,8 @@
 
     input[type='file'] {
       position: fixed;
-    right: 100%;
-    bottom: 100%;
+      right: 100%;
+      bottom: 100%;
     }
 
     label {
@@ -68,31 +68,38 @@
     }
 
     span {
-font-size: 14px;
-color: #373737;
-margin: 0 auto;
-max-width: 140px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-
-      }
-    
+      font-size: 14px;
+      color: #373737;
+      margin: 0 auto;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 
 .maxPrice {
-  padding-top: 56px ;
+  padding-top: 56px;
 
   &__description {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  gap: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 9px;
 
-  & span {
-    color: #989898;
+    & span {
+      color: #989898;
+    }
   }
-  }
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

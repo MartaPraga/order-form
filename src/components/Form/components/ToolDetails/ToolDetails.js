@@ -118,10 +118,12 @@ export const ToolDetails = ({clickedGuarantee, clickedPostWarranty}) => {
           <input 
           className="short" 
           type="number"
+          step="50"
           placeholder="Kwota"
-          min={1}></input>
+          min={0}></input>
         </div> ) : null }
       </div>
     </Section>
   );
 };
+
