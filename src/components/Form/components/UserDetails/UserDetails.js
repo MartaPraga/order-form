@@ -47,7 +47,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   className="long"
                   type="text"
                   placeholder="Imię"
-                  required
+                  
                   maxLength={ 25 }
                 />
                 {errors.firstName && <p className="error">pole obowiązkowe</p>}
@@ -60,7 +60,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   className="long"
                   type="text"
                   placeholder="Nazwisko"
-                  required
+                  
                 />
                 {errors.lastName && <p className="error">pole obowiązkowe</p>}
               </label>
@@ -68,13 +68,12 @@ export const UserDetails = ({ register, unregister, errors }) => {
           ) : (
             <>
               <label className="label">
-                {/* {label} */}
                 <input
                   {...register('companyName', { required: true })}
                   className="long"
                   type="text"
                   placeholder="Nazwa firmy"
-                  required
+                  
                 />
                 {errors.companyName && (
                   <p className="error">pole obowiązkowe</p>
@@ -88,7 +87,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   className="long"
                   type="text"
                   placeholder="NIP"
-                  required
+                  
                 />
                 {errors.companyTaxNumber && (
                   <p className="error">pole obowiązkowe</p>
@@ -121,12 +120,11 @@ export const UserDetails = ({ register, unregister, errors }) => {
           </label>
           <label className="label">
             <input
-              {...register('flatNumber', { required: true })}
+              {...register('flatNumber', { required: false })}
               className="short"
               type="text"
               placeholder="Nr lokalu"
             />
-            {errors.flatNumber && <p className="error">pole obowiązkowe</p>}
           </label>
         </div>
         <div className="UserDetails__form__data--line">

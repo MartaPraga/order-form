@@ -96,18 +96,15 @@ export const PackageDetails = () => {
 
   const haldleDPDDelivery = () => {
     setDPDDelivery(true);
-    setDHLDelivery (false);
+    setDHLDelivery(false);
     setDatePicker(true);
-  }
+  };
 
   const haldleDHLDelivery = () => {
     setDPDDelivery(false);
-    setDHLDelivery (true);
+    setDHLDelivery(true);
     setDatePicker(true);
-
-  }
-
-
+  };
 
   const handleinPost = () => {
     setInPostMassage(true);
@@ -127,6 +124,7 @@ export const PackageDetails = () => {
     setDHLPaczkomatMassage(true);
   };
 
+
   return (
     <Section
       title={
@@ -139,6 +137,7 @@ export const PackageDetails = () => {
       facilisis in nisl quis rutrum."
     >
       <p>Wybierz sposób nadania paczki:</p>
+
       <div className="PackageDetails">
         <div
           className={
@@ -171,13 +170,17 @@ export const PackageDetails = () => {
           <div className="CompanyList">
             <div className="CompanyList__options">
               <div
-                className={DPDDelivery ? "clickedOption" : "CompanyList__options__option"}
+                className={
+                  DPDDelivery ? 'clickedOption' : 'CompanyList__options__option'
+                }
                 onClick={haldleDPDDelivery}
               >
                 <img src="img/logo_DPD pickup.png" alt="logo DPD" />
               </div>
               <div
-                className={DHLDelivery ? "clickedOption" : "CompanyList__options__option"}
+                className={
+                  DHLDelivery ? 'clickedOption' : 'CompanyList__options__option'
+                }
                 onClick={haldleDHLDelivery}
               >
                 <img src="img/logo_DHLKurier.png" alt="logo DHL" />
@@ -261,6 +264,7 @@ export const PackageDetails = () => {
           className={smallPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleSmallPackage()}
           type="button"
+          value='mała'
         >
           <div className="packageSize__option--image">
             <img src="img/small_box_icon.svg" alt="small box icon" />
@@ -275,6 +279,7 @@ export const PackageDetails = () => {
           className={mediumPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleMediumPackage()}
           type="button"
+          value='średnia'
         >
           <div className="packageSize__option--image">
             <img src="img/medium_box_icon.svg" alt="small box icon" />
@@ -289,6 +294,7 @@ export const PackageDetails = () => {
           className={bigPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleBigPackage()}
           type="button"
+          value='duza'
         >
           <div className="packageSize__option--image">
             <img src="img/big_box_icon.svg" alt="small box icon" />
@@ -303,6 +309,7 @@ export const PackageDetails = () => {
           className={HugePackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleHugePackage()}
           type="button"
+          value='wielka'
         >
           <div className="packageSize__option--image">
             <img src="img/huge_box_icon.svg" alt="small box icon" />
@@ -317,6 +324,7 @@ export const PackageDetails = () => {
           className={PalletPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handlePalletPackage()}
           type="button"
+          value="paleta"
         >
           <div className="packageSize__option--image">
             <img src="img/pallet_icon.svg" alt="small box icon" />
@@ -325,6 +333,8 @@ export const PackageDetails = () => {
             <div className="packageSize__option--title">paleta</div>
           </div>
         </button>
+
+       
       </div>
     </Section>
   );

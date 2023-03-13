@@ -103,3 +103,9 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+a:link, a:visited {
+  color: #f7b01c;
+  text-decoration: none;
+  cursor: pointer;
+}

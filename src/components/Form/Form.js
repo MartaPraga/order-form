@@ -1,7 +1,7 @@
 import './Form.scss';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useState, useFetch } from 'react';
 import {
   UserDetails,
   ComplaintType,
@@ -19,6 +19,24 @@ export const Form = () => {
     clearErrors,
     unregister,
   } = useForm();
+
+  // const values = useFetch();
+
+// useForm ({
+//   defaultValues: {
+//     firstName: '',
+//     lastName: '',
+//     companyName: '',
+//     companyTaxNumber: '',
+//     address: '',
+//     houseNumber: '',
+//     postalCode: '',
+//     city: '',
+//     phoneNumber: '',
+//     mail: ''
+//   }
+// }, values)
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [clickedGuarantee, setClickedGuarantee] = useState(false);
@@ -54,6 +72,8 @@ export const Form = () => {
       <ToolDetails
       clickedGuarantee={clickedGuarantee}
       clickedPostWarranty={clickedPostWarranty}
+      register={register}
+        errors={errors}
       />
       <PackageDetails />
       <div className="confirmation">
