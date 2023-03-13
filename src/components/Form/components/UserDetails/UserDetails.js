@@ -4,13 +4,16 @@ import { Section } from '../Section/Section';
 
 export const UserDetails = ({ register, unregister, errors }) => {
   const [personalData, setPersonalData] = useState(true);
+  const [companyData, setCompanyData] = useState(false);
 
   const handlePersonalData = () => {
     setPersonalData(true);
+    setCompanyData(false);
   };
 
   const handleCompanyData = () => {
     setPersonalData(false);
+    setCompanyData(true);
   };
   return (
     <Section
@@ -26,8 +29,12 @@ export const UserDetails = ({ register, unregister, errors }) => {
     >
       <div>
         <div className="UserDetails__form--title">
-          <div onClick={handlePersonalData}>Osoba prywatna / </div>
-          <div onClick={handleCompanyData}>Firma</div>
+          <button 
+          className={personalData ? "UserDetails__form--title--clicked" : "UserDetails__form--title--option"}
+          onClick={handlePersonalData}>Osoba prywatna / </button>
+          <button 
+          className={companyData ? "UserDetails__form--title--clicked" : "UserDetails__form--title--option"}
+          onClick={handleCompanyData}> firma</button>
         </div>
         <div className="UserDetails__form__data--line">
           {personalData ? (
@@ -41,7 +48,7 @@ export const UserDetails = ({ register, unregister, errors }) => {
                   type="text"
                   placeholder="Imię"
                   required
-                  maxLength={ 15 }
+                  maxLength={ 25 }
                 />
                 {errors.firstName && <p className="error">pole obowiązkowe</p>}
               </label>

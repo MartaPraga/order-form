@@ -125,6 +125,20 @@ input[type='radio'] {
   }
 }
 
+.clickedOption {
+  width: 208px;
+      height: 113px;
+      box-shadow: #00000029 0 2px 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+      margin-bottom: 80px;
+      border: 1px solid #F7B01C;
+}
+
+// .clickedDeliveryCompany
+
 .massage {
   padding-bottom: 63px;
 }

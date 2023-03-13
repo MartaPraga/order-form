@@ -35,8 +35,7 @@ export const Form = () => {
   };
 
   const onSubmit = (data) => {
-    setModalIsOpen(true)
-    console.log('#####json ', JSON.stringify(data));
+    setModalIsOpen(true);
   };
 
   return (

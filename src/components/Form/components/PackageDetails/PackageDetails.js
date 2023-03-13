@@ -8,6 +8,8 @@ export const PackageDetails = () => {
   const [isParcelLockerList, setParcelLockerList] = useState(false);
   const [isDeliveryCompanyList, setDeliveryCompanyList] = useState(false);
   const [isDatePicker, setDatePicker] = useState(false);
+  const [DPDDelivery, setDPDDelivery] = useState(false);
+  const [DHLDelivery, setDHLDelivery] = useState(false);
   const [inPostMassage, setInPostMassage] = useState(false);
   const [DPDpickupMassage, setDPDpickupMassage] = useState(false);
   const [DHLPaczkomtMassage, setDHLPaczkomatMassage] = useState(false);
@@ -68,8 +70,7 @@ export const PackageDetails = () => {
     isMedium.current.disabled = true;
     isBig.current.disabled = true;
     isHuge.current.disabled = true;
-}, [])
-
+  }, []);
 
   const handleDeliveryCompanyList = () => {
     setDeliveryCompanyList(true);
@@ -93,9 +94,19 @@ export const PackageDetails = () => {
     isPallet.current.disabled = true;
   };
 
-  const handlePicker = () => {
+  const haldleDPDDelivery = () => {
+    setDPDDelivery(true);
+    setDHLDelivery (false);
     setDatePicker(true);
-  };
+  }
+
+  const haldleDHLDelivery = () => {
+    setDPDDelivery(false);
+    setDHLDelivery (true);
+    setDatePicker(true);
+
+  }
+
 
 
   const handleinPost = () => {
@@ -160,12 +171,15 @@ export const PackageDetails = () => {
           <div className="CompanyList">
             <div className="CompanyList__options">
               <div
-                className="CompanyList__options__option"
-                onClick={handlePicker}
+                className={DPDDelivery ? "clickedOption" : "CompanyList__options__option"}
+                onClick={haldleDPDDelivery}
               >
                 <img src="img/logo_DPD pickup.png" alt="logo DPD" />
               </div>
-              <div className="CompanyList__options__option">
+              <div
+                className={DHLDelivery ? "clickedOption" : "CompanyList__options__option"}
+                onClick={haldleDHLDelivery}
+              >
                 <img src="img/logo_DHLKurier.png" alt="logo DHL" />
               </div>
             </div>
@@ -179,19 +193,31 @@ export const PackageDetails = () => {
           <div className="CompanyList">
             <div className="CompanyList__options">
               <div
-                className="CompanyList__options__option"
+                className={
+                  inPostMassage
+                    ? 'clickedOption'
+                    : 'CompanyList__options__option'
+                }
                 onClick={handleinPost}
               >
                 <img src="img/logo_InPost-paczkomat.png" alt="logo Inpost" />
               </div>
               <div
-                className="CompanyList__options__option"
+                className={
+                  DPDpickupMassage
+                    ? 'clickedOption'
+                    : 'CompanyList__options__option'
+                }
                 onClick={handleDPDpickup}
               >
                 <img src="img/logo_DPD pickup.png" alt="logo DPD" />
               </div>
               <div
-                className="CompanyList__options__option"
+                className={
+                  DHLPaczkomtMassage
+                    ? 'clickedOption'
+                    : 'CompanyList__options__option'
+                }
                 onClick={handleDHLPaczkomat}
               >
                 <img src="img/logo_DHL_paczkomat.png" alt="logo DHL" />
@@ -234,7 +260,6 @@ export const PackageDetails = () => {
           ref={isSmall}
           className={smallPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleSmallPackage()}
-          
           type="button"
         >
           <div className="packageSize__option--image">
@@ -249,7 +274,6 @@ export const PackageDetails = () => {
           ref={isMedium}
           className={mediumPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleMediumPackage()}
-          
           type="button"
         >
           <div className="packageSize__option--image">
@@ -264,7 +288,6 @@ export const PackageDetails = () => {
           ref={isBig}
           className={bigPackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleBigPackage()}
-          
           type="button"
         >
           <div className="packageSize__option--image">
@@ -279,7 +302,6 @@ export const PackageDetails = () => {
           ref={isHuge}
           className={HugePackage ? 'activePackage' : 'packageSize__option'}
           onClick={() => handleHugePackage()}
-          
           type="button"
         >
           <div className="packageSize__option--image">
